@@ -37,13 +37,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhoneInformationActivity" />
-        <activity android:name=".WifiActivity" />
-        <activity android:name=".CamActivity" />
-        <activity android:name=".BtoothActivity" />
-        <activity android:name=".ButtonActivity" />
-        <activity android:name=".BrightnessActivity" />
-        <activity android:name=".ProxActivity"></activity>
+        <activity android:name=".ActivityClass.PhoneInformationActivity" />
+        <activity android:name=".ActivityClass.WifiActivity" />
+        <activity android:name=".ActivityClass.CamActivity" />
+        <activity android:name=".ActivityClass.BtoothActivity" />
+        <activity android:name=".ActivityClass.ButtonActivity" />
+        <activity android:name=".ActivityClass.BrightnessActivity" />
+        <activity android:name=".ActivityClass.ProxActivity" />
+        <activity android:name=".ActivityClass.PedoActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -17,6 +17,8 @@ import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.gandsoft.phonetest.R;
 
 public class BtoothActivity extends AppCompatActivity {
 

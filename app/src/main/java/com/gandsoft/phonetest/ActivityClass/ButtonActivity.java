@@ -1,4 +1,4 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
+
+import com.gandsoft.phonetest.R;
 
 public class ButtonActivity extends AppCompatActivity {
     private static final String TAG = "ButtonActivity";

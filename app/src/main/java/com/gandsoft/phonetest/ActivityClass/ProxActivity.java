@@ -1,4 +1,4 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.gandsoft.phonetest.R;
 
 public class ProxActivity extends AppCompatActivity {
     private static final String TAG = "ProxActivity";
@@ -40,6 +42,7 @@ public class ProxActivity extends AppCompatActivity {
     }
 
     SensorEventListener proximitySensorEventListener = new SensorEventListener(){
+        int a=0,b=0;
         @Override
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
@@ -50,8 +53,13 @@ public class ProxActivity extends AppCompatActivity {
                 Log.d(TAG, "onSensorChanged: "+String.valueOf(event.values[0]));
                 if(String.valueOf(event.values[0]).equals("0.0")){
                     ProximityReading.setText("Proximity sensor covered");
+                    a++;
                 }else{
                     ProximityReading.setText("Proximity sensor uncovered");
+                    b++;
+                }
+                if(a>2 && b>2){
+                    tvPassed.setVisibility(View.VISIBLE);
                 }
             }
         }

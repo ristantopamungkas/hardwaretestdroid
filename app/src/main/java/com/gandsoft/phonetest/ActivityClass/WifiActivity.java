@@ -1,4 +1,4 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
+
+import com.gandsoft.phonetest.R;
 
 import java.util.List;
 

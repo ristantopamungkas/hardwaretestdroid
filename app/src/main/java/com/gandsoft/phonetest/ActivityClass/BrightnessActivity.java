@@ -1,4 +1,4 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -21,6 +21,8 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import com.gandsoft.phonetest.R;
+
 
 public class BrightnessActivity extends Activity {//UI objects//
     private SeekBar seekBar;
@@ -28,7 +30,7 @@ public class BrightnessActivity extends Activity {//UI objects//
     private ContentResolver cResolver;
     private Window window;
     private static final String TAG = "MainActivity";
-    public TextView tvPassedMax,tvPassedMin;
+    public TextView tvPassedMax,tvPassedMin,tvPassed;
     @TargetApi(Build.VERSION_CODES.M)
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -37,6 +39,7 @@ public class BrightnessActivity extends Activity {//UI objects//
   //      requestPermissions(new String[]{Manifest.permission.WRITE_SECURE_SETTINGS}, 1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brightness);
+        tvPassed = (TextView)findViewById(R.id.tvPassed);
         tvPassedMax = (TextView)findViewById(R.id.tvPassedMax);
         tvPassedMin = (TextView)findViewById(R.id.tvPassedMin);
 
@@ -61,9 +64,10 @@ public class BrightnessActivity extends Activity {//UI objects//
         }
 
         seekBar.setProgress(brightness);
-
         seekBar.setOnSeekBarChangeListener(
             new OnSeekBarChangeListener(){
+                int a=0;
+                int b=0;
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {}
 
@@ -73,15 +77,23 @@ public class BrightnessActivity extends Activity {//UI objects//
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
                     progress = progress +minval;
+
+
                     Settings.System.putInt(cResolver, System.SCREEN_BRIGHTNESS,progress);
                     Log.d(TAG, "onProgressChanged: "+ progress);
 
                     if (progress ==255){
                         tvPassedMax.setVisibility(View.VISIBLE);
+                        a++;
                     }
                     else if(progress == 10){
-                        tvPassedMin.setVisibility(View.GONE);
+                        tvPassedMin.setVisibility(View.VISIBLE);
+                        b++;
                     }
+                    else if(a>0 && b>0){
+                        tvPassed.setVisibility(View.VISIBLE);
+                    }
+
                 }
             }
         );

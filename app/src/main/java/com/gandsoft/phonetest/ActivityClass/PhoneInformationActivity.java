@@ -1,4 +1,4 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -9,6 +9,8 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.widget.TextView;
+
+import com.gandsoft.phonetest.R;
 
 public class PhoneInformationActivity extends AppCompatActivity{
     private TextView tvPhoneInfo;

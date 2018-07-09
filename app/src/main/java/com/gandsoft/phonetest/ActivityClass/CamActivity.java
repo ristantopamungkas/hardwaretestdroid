@@ -1,4 +1,4 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import java.io.IOException;
 
@@ -16,6 +16,8 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.gandsoft.phonetest.R;
 
 public class CamActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
