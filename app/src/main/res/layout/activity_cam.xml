@@ -15,11 +15,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/surfaceview"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView"
         android:fontFamily="sans-serif-condensed"/>
 
     <SurfaceView
-        android:id="@+id/surfaceview"
+        android:id="@+id/surfaceView"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -44,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/surfaceview" />
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView" />
 
     <Button
         android:id="@+id/btnFrontCam"
@@ -59,6 +60,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/surfaceview" />
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView" />
 
 </android.support.constraint.ConstraintLayout>
