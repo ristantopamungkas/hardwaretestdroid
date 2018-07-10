@@ -18,11 +18,13 @@ import android.widget.TextView;
 import com.gandsoft.phonetest.R;
 
 import java.util.List;
+import com.gandsoft.phonetest.ReportHelper;
 
 public class WifiActivity extends AppCompatActivity {
     WifiManager wifi;
     List<ScanResult> wifiList;
     TextView txtWifiReport,tvPassed;
+    String report = "<font color='grey'>Wifi not tested</font>";
 
     @SuppressLint("WifiManagerLeak")
     @TargetApi(Build.VERSION_CODES.M)
@@ -50,9 +52,12 @@ public class WifiActivity extends AppCompatActivity {
         if(wifi.setWifiEnabled(true)){
             txtWifiReport.append(Html.fromHtml("Wifi Activated<br>"));
             tvPassed.setVisibility(View.VISIBLE);
+            report = "<font color='green'>Wifi can be activated</font><br>";
+            ReportHelper.writeToFile(report);
         }
         else{
             txtWifiReport.append(Html.fromHtml("Wifi Failed<br>"));
+            report = "<font color='red'>Wifi cannot be activated</font><br>";
         }
     }
 

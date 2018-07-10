@@ -6,103 +6,129 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/bPhoneInformation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phone Information"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"/>
 
-    <Button
-        android:id="@+id/bWifiTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wifi Test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"/>
+    <!--    <ImageButton
+            android:id="@+id/bStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/next_100"
+            android:background="#00000000"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6"
+            app:layout_constraintHorizontal_bias="0.5"/>
+    -->
+        <Button
+            android:id="@+id/bPhoneInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Information"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1" />
 
-    <Button
-        android:id="@+id/bCamTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Camera Test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"/>
+        <Button
+            android:id="@+id/bWifiTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wifi Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"/>
 
-    <Button
-        android:id="@+id/bBtoothTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bluetooth Test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        <Button
+            android:id="@+id/bCamTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camera Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3"/>
 
-    <Button
-        android:id="@+id/bButtonTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button Test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        <Button
+            android:id="@+id/bBtoothTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
 
-    <Button
-        android:id="@+id/bBrightnessTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Brightness Test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        <Button
+            android:id="@+id/bButtonTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
 
-    <Button
-        android:id="@+id/bProxTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Proximity Test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        <Button
+            android:id="@+id/bBrightnessTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brightness Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
 
-    <Button
-        android:id="@+id/bPedoTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pedometer Test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        <Button
+            android:id="@+id/bProxTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proximity Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.7" />
 
+        <Button
+            android:id="@+id/bPedoTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pedometer Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <Button
+            android:id="@+id/bMicTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Microphone Test"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
     <Button
-        android:id="@+id/bMicTest"
+        android:id="@+id/bGyroTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Microphone Test"
+        android:text="Gyro Test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

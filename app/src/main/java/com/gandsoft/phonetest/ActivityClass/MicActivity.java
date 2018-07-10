@@ -79,7 +79,6 @@ public class MicActivity extends AppCompatActivity {
     public void play(View view) {
         try{
             playBtn.setVisibility(View.GONE);
-            reiniciarBtn.setVisibility(View.VISIBLE);
             text.append(Html.fromHtml("Playing<br>"));
 
             myPlayer = new MediaPlayer();
@@ -89,6 +88,7 @@ public class MicActivity extends AppCompatActivity {
                     myPlayer.stop();
                     myPlayer.release();
                     text.append(Html.fromHtml("<font color='#00cc00'>End of File</font><br>"));
+                    reiniciarBtn.setVisibility(View.VISIBLE);
                     reiniciarBtn.setEnabled(true);
                 }
             });
@@ -102,18 +102,9 @@ public class MicActivity extends AppCompatActivity {
     }
 
     public void reiniciar(View view){
-        if(myPlayer.isPlaying()) {
-            myPlayer.stop();
-            myPlayer.release();
-            reiniciarBtn.setVisibility(View.GONE);
-            startBtn.setVisibility(View.VISIBLE);
-            text.setText("");
-        }
-        else {
-            reiniciarBtn.setVisibility(View.GONE);
-            startBtn.setVisibility(View.VISIBLE);
-            text.setText("");
-        }
+        reiniciarBtn.setVisibility(View.GONE);
+        startBtn.setVisibility(View.VISIBLE);
+        text.setText("");
     }
 
     @Override
