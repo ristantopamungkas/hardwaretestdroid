@@ -66,7 +66,6 @@ public class MicActivity extends AppCompatActivity {
             stopBtn.setVisibility(View.GONE);
             playBtn.setVisibility(View.VISIBLE);
             text.append(Html.fromHtml("Stop recording<br>"));
-
             myRecorder.stop();
             myRecorder.release();
             myRecorder  = null;
@@ -81,8 +80,7 @@ public class MicActivity extends AppCompatActivity {
         try{
             playBtn.setVisibility(View.GONE);
             reiniciarBtn.setVisibility(View.VISIBLE);
-            siguienteBtn.setVisibility(View.VISIBLE);
-            text.append(Html.fromHtml("<font color='#00cccc'>Record</font><br>"));
+            text.append(Html.fromHtml("Playing<br>"));
 
             myPlayer = new MediaPlayer();
             myPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -90,10 +88,8 @@ public class MicActivity extends AppCompatActivity {
                 public void onCompletion(MediaPlayer mp) {
                     myPlayer.stop();
                     myPlayer.release();
-                    myPlayer = null;
-                    text.append(Html.fromHtml("<font color='#00cc00'>End of Record</font><br>"));
+                    text.append(Html.fromHtml("<font color='#00cc00'>End of File</font><br>"));
                     reiniciarBtn.setEnabled(true);
-                    siguienteBtn.setEnabled(true);
                 }
             });
             myPlayer.setDataSource(outputFile);
@@ -106,11 +102,18 @@ public class MicActivity extends AppCompatActivity {
     }
 
     public void reiniciar(View view){
-        reiniciarBtn.setVisibility(View.GONE);
-        siguienteBtn.setVisibility(View.GONE);
-        startBtn.setVisibility(View.VISIBLE);
-        reiniciarBtn.setEnabled(false);
-        siguienteBtn.setEnabled(false);
+        if(myPlayer.isPlaying()) {
+            myPlayer.stop();
+            myPlayer.release();
+            reiniciarBtn.setVisibility(View.GONE);
+            startBtn.setVisibility(View.VISIBLE);
+            text.setText("");
+        }
+        else {
+            reiniciarBtn.setVisibility(View.GONE);
+            startBtn.setVisibility(View.VISIBLE);
+            text.setText("");
+        }
     }
 
     @Override
