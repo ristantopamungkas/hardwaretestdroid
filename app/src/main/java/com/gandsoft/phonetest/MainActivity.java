@@ -10,13 +10,14 @@ import com.gandsoft.phonetest.ActivityClass.BrightnessActivity;
 import com.gandsoft.phonetest.ActivityClass.BtoothActivity;
 import com.gandsoft.phonetest.ActivityClass.ButtonActivity;
 import com.gandsoft.phonetest.ActivityClass.CamActivity;
+import com.gandsoft.phonetest.ActivityClass.MicActivity;
 import com.gandsoft.phonetest.ActivityClass.PedoActivity;
 import com.gandsoft.phonetest.ActivityClass.PhoneInformationActivity;
 import com.gandsoft.phonetest.ActivityClass.ProxActivity;
 import com.gandsoft.phonetest.ActivityClass.WifiActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button bPhoneInformation, bWifiTest, bCamTest, bBtoothTest,bButtonTest,bBrightnessTest,bProxTest,bPedoTest;
+    private Button bPhoneInformation, bWifiTest, bCamTest, bBtoothTest,bButtonTest,bBrightnessTest,bProxTest,bPedoTest,bMicTest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         bBrightnessTest = (Button)findViewById(R.id.bBrightnessTest);
         bProxTest = (Button)findViewById(R.id.bProxTest);
         bPedoTest = (Button)findViewById(R.id.bPedoTest);
+        bMicTest = (Button)findViewById(R.id.bMicTest);
 
         bPhoneInformation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -76,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
         bPedoTest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, PedoActivity.class));
+            }
+        });
+
+        bMicTest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MicActivity.class));
             }
         });
 

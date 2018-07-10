@@ -44,7 +44,8 @@
         <activity android:name=".ActivityClass.ButtonActivity" />
         <activity android:name=".ActivityClass.BrightnessActivity" />
         <activity android:name=".ActivityClass.ProxActivity" />
-        <activity android:name=".ActivityClass.PedoActivity"></activity>
+        <activity android:name=".ActivityClass.PedoActivity" />
+        <activity android:name=".ActivityClass.MicActivity"></activity>
     </application>
 
 </manifest>

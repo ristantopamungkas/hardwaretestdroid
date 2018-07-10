@@ -27,6 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2"/>
+
     <Button
         android:id="@+id/bCamTest"
         android:layout_width="wrap_content"
@@ -48,6 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4" />
+
     <Button
         android:id="@+id/bButtonTest"
         android:layout_width="wrap_content"
@@ -58,6 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
+
     <Button
         android:id="@+id/bBrightnessTest"
         android:layout_width="wrap_content"
@@ -68,6 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6" />
+
     <Button
         android:id="@+id/bProxTest"
         android:layout_width="wrap_content"
@@ -78,6 +82,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.7" />
+
     <Button
         android:id="@+id/bPedoTest"
         android:layout_width="wrap_content"
@@ -88,5 +93,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/bMicTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pedometer Test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
 </android.support.constraint.ConstraintLayout>
