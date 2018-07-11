@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
-
+import com.gandsoft.phonetest.ReportHelper;
 public class CamActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
     public TextView tvPassed;
@@ -28,7 +28,7 @@ public class CamActivity extends AppCompatActivity implements SurfaceHolder.Call
     public Button btnRear;
     public Button btnFront;
   //  public Button btnNext;
-
+    private String report;
     @TargetApi(Build.VERSION_CODES.M)
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -43,14 +43,15 @@ public class CamActivity extends AppCompatActivity implements SurfaceHolder.Call
         surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
+
+        surfaceView.setVisibility(View.VISIBLE);
+        surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.addCallback(this);
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-
     }
 
     public void rearCamera(View v) {
-        surfaceView.setVisibility(View.VISIBLE);
         btnRear.setVisibility(View.GONE);
         btnFront.setVisibility(View.VISIBLE);
 
@@ -76,6 +77,8 @@ public class CamActivity extends AppCompatActivity implements SurfaceHolder.Call
             camera.startPreview();
             btnFront.setVisibility(View.GONE);
             tvPassed.setVisibility(View.VISIBLE);
+            report = "<br><font color='green'>Camera can be activated</font><br>";
+            ReportHelper.writeToFile(report);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -19,13 +19,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
+import com.gandsoft.phonetest.ReportHelper;
 
 public class BtoothActivity extends AppCompatActivity {
 
     TextView txtReport,tvPassed;
     Button btnNext;
     BluetoothAdapter btAdapter;
-    String report = "- <strong>Bluetooth:</strong> <font color='#cc0000'></font><br>\n";
+    String report;
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -40,11 +41,12 @@ public class BtoothActivity extends AppCompatActivity {
         btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (!btAdapter.isEnabled()) {
             btAdapter.enable();
-            SystemClock.sleep(3000);
+            SystemClock.sleep(1000);
         }
         if(btAdapter.isEnabled()){
             txtReport.append(Html.fromHtml("Bluetooth activated<br>"));
             tvPassed.setVisibility(View.VISIBLE);
+            ReportHelper.writeToFile("<br><font color='green'>Bluetooth can be activated</font><br>");
         }
 
         else{

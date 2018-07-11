@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gandsoft.phonetest.R;
+import com.gandsoft.phonetest.ReportHelper;
 
 public class PedoActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -31,6 +32,7 @@ public class PedoActivity extends AppCompatActivity implements SensorEventListen
 
         if (countSensor != null) {
             sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
+            ReportHelper.writeToFile("<br><font color='green'>Pedometer worked</font><br>");
         } else {
             Toast.makeText(this, "Count sensor not available!", Toast.LENGTH_LONG).show();
         }

@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
+import com.gandsoft.phonetest.ReportHelper;
 
 public class MicActivity extends AppCompatActivity {
 
@@ -79,7 +80,6 @@ public class MicActivity extends AppCompatActivity {
     public void play(View view) {
         try{
             playBtn.setVisibility(View.GONE);
-            reiniciarBtn.setVisibility(View.VISIBLE);
             text.append(Html.fromHtml("Playing<br>"));
 
             myPlayer = new MediaPlayer();
@@ -89,7 +89,10 @@ public class MicActivity extends AppCompatActivity {
                     myPlayer.stop();
                     myPlayer.release();
                     text.append(Html.fromHtml("<font color='#00cc00'>End of File</font><br>"));
+                    reiniciarBtn.setVisibility(View.VISIBLE);
                     reiniciarBtn.setEnabled(true);
+                    ReportHelper.writeToFile("<br><font color='green'>Mic worked</font><br>");
+
                 }
             });
             myPlayer.setDataSource(outputFile);
@@ -102,18 +105,9 @@ public class MicActivity extends AppCompatActivity {
     }
 
     public void reiniciar(View view){
-        if(myPlayer.isPlaying()) {
-            myPlayer.stop();
-            myPlayer.release();
-            reiniciarBtn.setVisibility(View.GONE);
-            startBtn.setVisibility(View.VISIBLE);
-            text.setText("");
-        }
-        else {
-            reiniciarBtn.setVisibility(View.GONE);
-            startBtn.setVisibility(View.VISIBLE);
-            text.setText("");
-        }
+        reiniciarBtn.setVisibility(View.GONE);
+        startBtn.setVisibility(View.VISIBLE);
+        text.setText("");
     }
 
     @Override
