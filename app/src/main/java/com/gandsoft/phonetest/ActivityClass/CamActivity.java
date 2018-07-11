@@ -1,8 +1,5 @@
 package com.gandsoft.phonetest.ActivityClass;
 
-import java.io.IOException;
-
-
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.graphics.PixelFormat;
@@ -19,6 +16,8 @@ import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
 import com.gandsoft.phonetest.ReportHelper;
+
+import java.io.IOException;
 public class CamActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
     public TextView tvPassed;
@@ -50,7 +49,6 @@ public class CamActivity extends AppCompatActivity implements SurfaceHolder.Call
         surfaceHolder.addCallback(this);
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
     }
-
     public void rearCamera(View v) {
         btnRear.setVisibility(View.GONE);
         btnFront.setVisibility(View.VISIBLE);

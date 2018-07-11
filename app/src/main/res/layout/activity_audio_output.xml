@@ -3,43 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@id/rel"
     android:layout_height="match_parent"
-    tools:context=".ActivityClass.ButtonActivity">
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:onClick="back"
-        android:id="@+id/bBack"
-        />
+    tools:context=".ActivityClass.AudioOutputActivity">
     <TextView
-        android:id="@+id/tvPassedVolUp"
+        android:id="@+id/tvPassed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="Volume Up Button Test Passed"
+        android:text="Test Passed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:visibility="gone"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Test Passed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvPassedVolDown"
+    <Button
+        android:id="@+id/bTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="Volume Down Button Test Passed"
-        android:visibility="gone"
+        android:onClick="recreate"
+        android:text="Start Test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 </android.support.constraint.ConstraintLayout>

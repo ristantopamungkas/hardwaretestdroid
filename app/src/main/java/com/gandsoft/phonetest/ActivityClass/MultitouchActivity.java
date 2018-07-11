@@ -2,18 +2,17 @@ package com.gandsoft.phonetest.ActivityClass;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Html;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
 
 import java.util.HashMap;
+import java.util.Random;
 
 
 public class MultitouchActivity extends AppCompatActivity {
@@ -23,40 +22,47 @@ public class MultitouchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multitouch);
-        final TextView tvPassed;
+        this.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        final int a=200, b=200;
 
-        tvPassed = (TextView)findViewById(R.id.tvPassed);
         final HashMap<Integer,View> map= new HashMap<>();
         final ConstraintLayout rl= (ConstraintLayout)findViewById(R.id.rel);
 
         rl.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent event) {
+                Random rnd = new Random();
+                int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
 
                 if(event.getActionMasked()==MotionEvent.ACTION_DOWN){
                     int newPointerIndex = event.getActionIndex();
                     int newPointerId = event.getPointerId(newPointerIndex);
                     View newView = new View(MultitouchActivity.this);
-                    newView.setBackgroundColor(Color.BLACK);
+                    newView.setBackgroundColor(color);
                     float x = event.getX();
                     float y = event.getY();
-                    newView.setLayoutParams(new LinearLayout.LayoutParams(200,200));
-                    newView.setX(x-100);
-                    newView.setY(y-100);
+                    newView.setLayoutParams(new LinearLayout.LayoutParams(a,b));
+                    newView.setX(x-(a/2));
+                    newView.setY(y-(b/2));
                     map.put(newPointerId,newView);
                     rl.addView(newView);
-                    tvPassed.setText("Wew");
                 }
                 else if(event.getActionMasked()==MotionEvent.ACTION_POINTER_DOWN){
                     int newPointerIndex = event.getActionIndex();
                     int newPointerId = event.getPointerId(newPointerIndex);
                     View newView = new View(MultitouchActivity.this);
-                    newView.setBackgroundColor(Color.BLACK);
+                    newView.setBackgroundColor(color);
                     float x = event.getX(newPointerIndex);
                     float y = event.getY(newPointerIndex);
-                    newView.setLayoutParams(new LinearLayout.LayoutParams(200,200));
-                    newView.setX(x-100);
-                    newView.setY(y-100);
+                    newView.setLayoutParams(new LinearLayout.LayoutParams(a,b));
+                    newView.setX(x-(a/2));
+                    newView.setY(y-(b/2));
                     map.put(newPointerId,newView);
                     rl.addView(newView);
                 }else if(event.getActionMasked()==MotionEvent.ACTION_UP){
@@ -64,29 +70,27 @@ public class MultitouchActivity extends AppCompatActivity {
                     int newPointerId = event.getPointerId(newPointerIndex);
                     View viewToBeRemoved = map.get(newPointerId);
                     rl.removeView(viewToBeRemoved);
-                    a--;
-                }
-                else if(event.getActionMasked()==MotionEvent.ACTION_POINTER_UP){
+                }else if(event.getActionMasked()==MotionEvent.ACTION_POINTER_UP){
                     int newPointerIndex = event.getActionIndex();
                     int newPointerId = event.getPointerId(newPointerIndex);
                     View viewToBeRemoved = map.get(newPointerId);
                     rl.removeView(viewToBeRemoved);
-                    a--;
                 }else if(event.getActionMasked()==MotionEvent.ACTION_MOVE){
                     int count = event.getPointerCount();
-
                     for (int i =0;i<count;i++){
                         int id=event.getPointerId(i);
                         float x = event.getX(i);
                         float y = event.getY(i);
                         View nv=map.get(id);
-                        nv.setX(x-100);
-                        nv.setY(y-100);
+                        nv.setX(x-(a/2));
+                        nv.setY(y-(b/2));
                     }
                 }
                 return true;
             }
         });
+
     }
+
 
 }
