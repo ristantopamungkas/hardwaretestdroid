@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
+import com.gandsoft.phonetest.ReportHelper;
 
 public class ProxActivity extends AppCompatActivity {
     private static final String TAG = "ProxActivity";
@@ -60,6 +61,7 @@ public class ProxActivity extends AppCompatActivity {
                 }
                 if(a>2 && b>2){
                     tvPassed.setVisibility(View.VISIBLE);
+                    ReportHelper.writeToFile("<br><font color='green'>Proximity sensor worked</font><br>");
                 }
             }
         }

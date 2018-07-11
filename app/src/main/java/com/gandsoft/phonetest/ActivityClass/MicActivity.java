@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
+import com.gandsoft.phonetest.ReportHelper;
 
 public class MicActivity extends AppCompatActivity {
 
@@ -90,6 +91,8 @@ public class MicActivity extends AppCompatActivity {
                     text.append(Html.fromHtml("<font color='#00cc00'>End of File</font><br>"));
                     reiniciarBtn.setVisibility(View.VISIBLE);
                     reiniciarBtn.setEnabled(true);
+                    ReportHelper.writeToFile("<br><font color='green'>Mic worked</font><br>");
+
                 }
             });
             myPlayer.setDataSource(outputFile);

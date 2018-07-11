@@ -43,13 +43,15 @@ public class CamActivity extends AppCompatActivity implements SurfaceHolder.Call
         surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
+
+        surfaceView.setVisibility(View.VISIBLE);
+        surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.addCallback(this);
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
     }
 
     public void rearCamera(View v) {
-        surfaceView.setVisibility(View.VISIBLE);
         btnRear.setVisibility(View.GONE);
         btnFront.setVisibility(View.VISIBLE);
 

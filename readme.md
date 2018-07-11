@@ -1,7 +1,7 @@
 ###step git:
 
 sebelum memulai bekerja, tiap harinya lakukan pengecekan versioning command:
-git stash && git checkout master && git fetch && git merge origin/master && git stash pop
+git checkout master && git fetch && git merge origin/master
 
 silahkan lakukan perubahan2 sesuai kebutuhan development
 

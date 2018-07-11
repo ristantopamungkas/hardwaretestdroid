@@ -29,8 +29,7 @@ public class GyroActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.activity_gyro);
         tv = (TextView) findViewById(R.id.txtGyroReport);
         sManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        report = "Gyroscope workeds";
-        ReportHelper.writeToFile(report);
+        ReportHelper.writeToFile("<br><font color='green'>Gyroscope worked</font><br>");
     }
 
     @Override
@@ -54,11 +53,9 @@ public class GyroActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent event)
     {
-        if (event.accuracy == SensorManager.SENSOR_STATUS_UNRELIABLE)
-        {
+        if (event.accuracy == SensorManager.SENSOR_STATUS_UNRELIABLE) {
             return;
         }
-        //else it will output the Roll, Pitch and Yawn values
         tv.setText(Html.fromHtml(
                 "X: " + String.format("%.2f", (event.values[2])) + "<br>" +
                 "Y: " + String.format("%.2f", (event.values[1])) + "<br>" +

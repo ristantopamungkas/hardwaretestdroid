@@ -22,27 +22,33 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
+import com.gandsoft.phonetest.ReportHelper;
 
 
 public class BrightnessActivity extends Activity {//UI objects//
+    private static final String TAG = "MainActivity";
     private SeekBar seekBar;
     private int brightness;
     private ContentResolver cResolver;
     private Window window;
-    private static final String TAG = "MainActivity";
-    public TextView tvPassedMax,tvPassedMin,tvPassed;
+    private TextView tvPassedMax,tvPassedMin,tvPassed;
+
     @TargetApi(Build.VERSION_CODES.M)
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onCreate(Bundle savedInstanceState) {
-//        requestPermissions(new String[]{Manifest.permission.WRITE_SETTINGS}, 1);
-  //      requestPermissions(new String[]{Manifest.permission.WRITE_SECURE_SETTINGS}, 1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brightness);
+
         tvPassed = (TextView)findViewById(R.id.tvPassed);
         tvPassedMax = (TextView)findViewById(R.id.tvPassedMax);
         tvPassedMin = (TextView)findViewById(R.id.tvPassedMin);
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
 
+        cResolver = getContentResolver();
+        window = getWindow();
+        seekBar.setMax(245);
+        final int minval =10;
 
         Context context = getApplicationContext();
         boolean settingsCanWrite = Settings.System.canWrite(context);
@@ -52,11 +58,6 @@ public class BrightnessActivity extends Activity {//UI objects//
             startActivity(intent);
         }
 
-        seekBar = (SeekBar) findViewById(R.id.seekBar);
-        cResolver = getContentResolver();
-        window = getWindow();
-        final int minval =10;
-        seekBar.setMax(245);
         try {
             brightness = System.getInt(cResolver, System.SCREEN_BRIGHTNESS);
         } catch (SettingNotFoundException e) {
@@ -66,8 +67,8 @@ public class BrightnessActivity extends Activity {//UI objects//
         seekBar.setProgress(brightness);
         seekBar.setOnSeekBarChangeListener(
             new OnSeekBarChangeListener(){
-                int a=0;
-                int b=0;
+                int a=0,b=0;
+
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {}
 
@@ -77,21 +78,20 @@ public class BrightnessActivity extends Activity {//UI objects//
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
                     progress = progress +minval;
-
-
                     Settings.System.putInt(cResolver, System.SCREEN_BRIGHTNESS,progress);
                     Log.d(TAG, "onProgressChanged: "+ progress);
 
                     if (progress ==255){
                         tvPassedMax.setVisibility(View.VISIBLE);
-                        a++;
+                        a=1;
                     }
                     else if(progress == 10){
                         tvPassedMin.setVisibility(View.VISIBLE);
-                        b++;
+                        b=1;
                     }
                     else if(a>0 && b>0){
                         tvPassed.setVisibility(View.VISIBLE);
+                        ReportHelper.writeToFile("<br><font color='green'>Brightness control worked</font><br>");
                     }
 
                 }

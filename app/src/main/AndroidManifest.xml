@@ -49,6 +49,8 @@
         <activity android:name=".ActivityClass.PedoActivity" />
         <activity android:name=".ActivityClass.MicActivity" />
         <activity android:name=".ActivityClass.GyroActivity" />
+        <activity android:name=".ActivityClass.MultitouchActivity" />
+        <activity android:name=".ActivityClass.TouchscreenActivity"></activity>
     </application>
 
 </manifest>

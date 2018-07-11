@@ -41,13 +41,12 @@ public class BtoothActivity extends AppCompatActivity {
         btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (!btAdapter.isEnabled()) {
             btAdapter.enable();
-            SystemClock.sleep(3000);
+            SystemClock.sleep(1000);
         }
         if(btAdapter.isEnabled()){
             txtReport.append(Html.fromHtml("Bluetooth activated<br>"));
             tvPassed.setVisibility(View.VISIBLE);
-            report = "<br><font color='green'>Bluetooth can be activated</font><br>";
-            ReportHelper.writeToFile(report);
+            ReportHelper.writeToFile("<br><font color='green'>Bluetooth can be activated</font><br>");
         }
 
         else{

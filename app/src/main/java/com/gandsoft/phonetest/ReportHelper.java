@@ -12,6 +12,7 @@ import java.io.OutputStreamWriter;
 public class ReportHelper {
     public static String uri = Environment.getExternalStorageDirectory().getAbsolutePath() + "/phonetest_report.txt";
 
+
     public static void writeToFile(String data) {
         try {
             File myFile = new File(uri);
@@ -31,8 +32,7 @@ public class ReportHelper {
         try {
             File myFile = new File(path);
             FileInputStream fIn = new FileInputStream(myFile);
-            BufferedReader myReader = new BufferedReader(
-                    new InputStreamReader(fIn));
+            BufferedReader myReader = new BufferedReader(new InputStreamReader(fIn));
             String aDataRow = "";
             String aBuffer = "";
             while ((aDataRow = myReader.readLine()) != null) {

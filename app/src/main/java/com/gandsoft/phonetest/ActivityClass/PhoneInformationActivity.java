@@ -82,4 +82,10 @@ public class PhoneInformationActivity extends AppCompatActivity {
 
         txtReport.setText(Html.fromHtml(ReportHelper.readFromFile(uri)));
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        ReportHelper.removeFile();
+    }
 }

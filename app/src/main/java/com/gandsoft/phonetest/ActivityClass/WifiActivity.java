@@ -15,6 +15,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
+import com.gandsoft.phonetest.MainActivity;
 import com.gandsoft.phonetest.R;
 
 import java.util.List;
