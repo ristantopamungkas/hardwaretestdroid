@@ -1,4 +1,4 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -18,6 +18,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.gandsoft.phonetest.R;
+
 public class BtoothActivity extends AppCompatActivity {
 
     TextView txtReport,tvPassed;
@@ -35,30 +37,19 @@ public class BtoothActivity extends AppCompatActivity {
         tvPassed = (TextView)findViewById(R.id.tvPassed);
         txtReport = (TextView)findViewById(R.id.txtBtReport);
 
-
         btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (!btAdapter.isEnabled()) {
             btAdapter.enable();
             SystemClock.sleep(3000);
         }
-        txtReport.append(Html.fromHtml("Bluetooth activated<br>"));
-        btAdapter.startDiscovery();
+        if(btAdapter.isEnabled()){
+            txtReport.append(Html.fromHtml("Bluetooth activated<br>"));
+            tvPassed.setVisibility(View.VISIBLE);
+        }
 
-        final BroadcastReceiver bReceiver = new BroadcastReceiver() {
-            public void onReceive(Context context, Intent intent) {
-                String action = intent.getAction();
-                if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                    BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                    txtReport.append(Html.fromHtml("Bluetooth device found"));
-                    tvPassed.setVisibility(View.VISIBLE);
-                    btAdapter.cancelDiscovery();
-                    btAdapter.disable();
-                } else {
-                    txtReport.append(Html.fromHtml("Can't Found"));
-                }
-            }
-        };
-        registerReceiver(bReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+        else{
+            txtReport.append(Html.fromHtml("Bluetooth cant activate<br>"));
+        }
     }
     @Override
     public void onBackPressed() {

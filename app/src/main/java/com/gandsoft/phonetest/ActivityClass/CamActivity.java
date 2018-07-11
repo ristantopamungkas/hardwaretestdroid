@@ -1,22 +1,23 @@
-package com.gandsoft.phonetest;
+package com.gandsoft.phonetest.ActivityClass;
 
 import java.io.IOException;
 
+
 import android.Manifest;
 import android.annotation.TargetApi;
-import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.gandsoft.phonetest.R;
 
 public class CamActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
@@ -39,9 +40,9 @@ public class CamActivity extends AppCompatActivity implements SurfaceHolder.Call
         btnRear = (Button) findViewById(R.id.btnRearCam);
         btnFront = (Button) findViewById(R.id.btnFrontCam);
         tvPassed = (TextView) findViewById(R.id.tvPassed);
+        surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
-        surfaceView = (SurfaceView) findViewById(R.id.surfaceview);
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.addCallback(this);
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
@@ -49,6 +50,7 @@ public class CamActivity extends AppCompatActivity implements SurfaceHolder.Call
     }
 
     public void rearCamera(View v) {
+        surfaceView.setVisibility(View.VISIBLE);
         btnRear.setVisibility(View.GONE);
         btnFront.setVisibility(View.VISIBLE);
 
