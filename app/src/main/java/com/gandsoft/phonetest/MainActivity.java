@@ -6,21 +6,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.gandsoft.phonetest.ActivityClass.AudioOutputActivity;
 import com.gandsoft.phonetest.ActivityClass.BrightnessActivity;
 import com.gandsoft.phonetest.ActivityClass.BtoothActivity;
 import com.gandsoft.phonetest.ActivityClass.ButtonActivity;
 import com.gandsoft.phonetest.ActivityClass.CamActivity;
+import com.gandsoft.phonetest.ActivityClass.GpsActivity;
 import com.gandsoft.phonetest.ActivityClass.GyroActivity;
+import com.gandsoft.phonetest.ActivityClass.LcdActivity;
 import com.gandsoft.phonetest.ActivityClass.MicActivity;
+import com.gandsoft.phonetest.ActivityClass.MultitouchActivity;
 import com.gandsoft.phonetest.ActivityClass.PedoActivity;
 import com.gandsoft.phonetest.ActivityClass.PhoneInformationActivity;
 import com.gandsoft.phonetest.ActivityClass.ProxActivity;
-import com.gandsoft.phonetest.ActivityClass.MultitouchActivity;
 import com.gandsoft.phonetest.ActivityClass.TouchscreenActivity;
 import com.gandsoft.phonetest.ActivityClass.WifiActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button bPhoneInformation, bWifiTest, bCamTest, bBtoothTest,bButtonTest,bBrightnessTest,bProxTest,bPedoTest,bMicTest,bGyroTest,bMultitouchTest,bTouchscreenTest;
+    private Button bPhoneInformation, bWifiTest, bCamTest, bBtoothTest,bButtonTest,bBrightnessTest,bProxTest,bPedoTest,bMicTest,bGyroTest,bMultitouchTest,bTouchscreenTest,bGpsTest,bLcdTest,bAudioOutputTest;
 /*    private ImageButton bStart;*/
 
     @Override
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         bGyroTest = (Button)findViewById(R.id.bGyroTest);
         bMultitouchTest = (Button)findViewById(R.id.bMultitouchTest);
         bTouchscreenTest = (Button)findViewById(R.id.bTouchscreenTest);
+        bGpsTest = (Button)findViewById(R.id.bGpsTest);
+        bLcdTest = (Button)findViewById(R.id.bLcdTest);
+        bAudioOutputTest = (Button) findViewById(R.id.bAudioOutputTest);
 /*        bStart.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, PhoneInformationActivity.class));
@@ -114,6 +120,21 @@ public class MainActivity extends AppCompatActivity {
         bTouchscreenTest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, TouchscreenActivity.class));
+            }
+        });
+        bGpsTest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GpsActivity.class));
+            }
+        });
+        bLcdTest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LcdActivity.class));
+            }
+        });
+        bAudioOutputTest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AudioOutputActivity.class));
             }
         });
     }

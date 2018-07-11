@@ -11,6 +11,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     /*Feature*/
     <uses-feature
         android:name="android.hardware.camera"
@@ -50,7 +52,10 @@
         <activity android:name=".ActivityClass.MicActivity" />
         <activity android:name=".ActivityClass.GyroActivity" />
         <activity android:name=".ActivityClass.MultitouchActivity" />
-        <activity android:name=".ActivityClass.TouchscreenActivity"></activity>
+        <activity android:name=".ActivityClass.TouchscreenActivity" />
+        <activity android:name=".ActivityClass.GpsActivity" />
+        <activity android:name=".ActivityClass.LcdActivity" />
+        <activity android:name=".ActivityClass.AudioOutputActivity"></activity>
     </application>
 
 </manifest>

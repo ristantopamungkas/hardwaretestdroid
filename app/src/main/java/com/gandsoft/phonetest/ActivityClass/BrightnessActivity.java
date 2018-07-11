@@ -1,11 +1,11 @@
 package com.gandsoft.phonetest.ActivityClass;
 
-import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,16 +13,18 @@ import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.provider.Settings.System;
 import android.support.annotation.RequiresApi;
+import android.support.constraint.ConstraintLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
 import com.gandsoft.phonetest.ReportHelper;
+
+import java.util.Random;
 
 
 public class BrightnessActivity extends Activity {//UI objects//
@@ -78,8 +80,11 @@ public class BrightnessActivity extends Activity {//UI objects//
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
                     progress = progress +minval;
+
                     Settings.System.putInt(cResolver, System.SCREEN_BRIGHTNESS,progress);
                     Log.d(TAG, "onProgressChanged: "+ progress);
+
+
 
                     if (progress ==255){
                         tvPassedMax.setVisibility(View.VISIBLE);
