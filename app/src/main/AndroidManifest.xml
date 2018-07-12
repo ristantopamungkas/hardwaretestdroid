@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     /*Feature*/
     <uses-feature
         android:name="android.hardware.camera"
@@ -55,7 +56,8 @@
         <activity android:name=".ActivityClass.TouchscreenActivity" />
         <activity android:name=".ActivityClass.GpsActivity" />
         <activity android:name=".ActivityClass.LcdActivity" />
-        <activity android:name=".ActivityClass.AudioOutputActivity"></activity>
+        <activity android:name=".ActivityClass.AudioOutputActivity"/>
+
     </application>
 
 </manifest>
