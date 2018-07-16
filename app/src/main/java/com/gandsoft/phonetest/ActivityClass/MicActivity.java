@@ -1,10 +1,8 @@
 package com.gandsoft.phonetest.ActivityClass;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import java.io.File;
 import java.io.IOException;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;

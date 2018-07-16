@@ -28,8 +28,10 @@ public class LcdActivity extends Activity {
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        final int a=10000,b=10000;
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY );
+        final int a=10000;
+        final int b=10000;
+        final int[] c = { 0 };
         final HashMap<Integer,View> map= new HashMap<>();
         final ConstraintLayout rl= (ConstraintLayout)findViewById(R.id.rel);
         rl.setOnTouchListener(new View.OnTouchListener() {
@@ -43,11 +45,16 @@ public class LcdActivity extends Activity {
                     Random rnd = new Random();
                     int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
                     newView.setBackgroundColor(color);
+                    c[0] = c[0] +1;
+                    if(c[0]>5){
+                        finish();
+                    }
                     float x = event.getX();
                     float y = event.getY();
                     newView.setLayoutParams(new LinearLayout.LayoutParams(a,b));
                     newView.setX(x-(a/2));
                     newView.setY(y-(b/2));
+
                     map.put(newPointerId,newView);
                     rl.addView(newView);
                 }

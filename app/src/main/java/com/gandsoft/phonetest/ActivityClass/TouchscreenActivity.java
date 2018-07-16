@@ -41,7 +41,7 @@ public class TouchscreenActivity extends AppCompatActivity {
                     newView.setBackgroundColor(Color.BLACK);
                     float x = event.getX();
                     float y = event.getY();
-                    newView.setLayoutParams(new LinearLayout.LayoutParams(a,b));
+                    newView.setLayoutParams(new ConstraintLayout.LayoutParams(a,b));
                     newView.setX(x-(a/2));
                     newView.setY(y-(b/2));
                     map.put(newPointerId,newView);
@@ -54,7 +54,7 @@ public class TouchscreenActivity extends AppCompatActivity {
                     newView.setBackgroundColor(Color.BLACK);
                     float x = event.getX(newPointerIndex);
                     float y = event.getY(newPointerIndex);
-                    newView.setLayoutParams(new LinearLayout.LayoutParams(a,b));
+                    newView.setLayoutParams(new ConstraintLayout.LayoutParams(a,b));
                     newView.setX(x-(a/2));
                     newView.setY(y-(b/2));
                     map.put(newPointerId,newView);
@@ -66,7 +66,7 @@ public class TouchscreenActivity extends AppCompatActivity {
                     newView.setBackgroundColor(Color.BLACK);
                     float x = event.getX();
                     float y = event.getY();
-                    newView.setLayoutParams(new LinearLayout.LayoutParams(a,b));
+                    newView.setLayoutParams(new ConstraintLayout.LayoutParams(a,b));
                     newView.setX(x-(a/2));
                     newView.setY(y-(b/2));
                     map.put(newPointerId,newView);
@@ -78,7 +78,7 @@ public class TouchscreenActivity extends AppCompatActivity {
                     newView.setBackgroundColor(Color.BLACK);
                     float x = event.getX();
                     float y = event.getY();
-                    newView.setLayoutParams(new LinearLayout.LayoutParams(a,b));
+                    newView.setLayoutParams(new ConstraintLayout.LayoutParams(a,b));
                     newView.setX(x-(a/2));
                     newView.setY(y-(b/2));
                     map.put(newPointerId,newView);
@@ -88,7 +88,7 @@ public class TouchscreenActivity extends AppCompatActivity {
                     int newPointerId = event.getPointerId(newPointerIndex);
                     View newView = new View(TouchscreenActivity.this);
                     newView.setBackgroundColor(Color.BLACK);
-                    newView.setLayoutParams(new LinearLayout.LayoutParams(a,b));
+                    newView.setLayoutParams(new ConstraintLayout.LayoutParams(a,b));
                     int count = event.getPointerCount();
                     map.put(newPointerId,newView);
                     rl.addView(newView);
@@ -100,7 +100,6 @@ public class TouchscreenActivity extends AppCompatActivity {
                         nv.setX(x-(a/2));
                         nv.setY(y-(a/2));
                     }
-
                 }
                 return true;
             }

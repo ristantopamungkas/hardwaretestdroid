@@ -2,22 +2,17 @@ package com.gandsoft.phonetest.ActivityClass;
 
 
 
-import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.view.View;
 import android.widget.TextView;
 
 import com.gandsoft.phonetest.R;
 import com.gandsoft.phonetest.ReportHelper;
-
-import java.util.Random;
 
 public class GyroActivity extends AppCompatActivity implements SensorEventListener {
     private TextView tv;
