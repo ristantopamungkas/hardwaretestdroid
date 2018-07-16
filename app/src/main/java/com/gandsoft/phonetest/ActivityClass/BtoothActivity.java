@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.gandsoft.phonetest.R;
 import com.gandsoft.phonetest.ReportHelper;
 public class BtoothActivity extends AppCompatActivity {
-
     TextView txtReport,tvPassed;
     Button btnNext;
     BluetoothAdapter btAdapter;

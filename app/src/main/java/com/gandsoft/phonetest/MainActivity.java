@@ -23,7 +23,7 @@ import com.gandsoft.phonetest.ActivityClass.TouchscreenActivity;
 import com.gandsoft.phonetest.ActivityClass.WifiActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button bPhoneInformation, bWifiTest, bCamTest, bBtoothTest,bButtonTest,bBrightnessTest,bProxTest,bPedoTest,bMicTest,bGyroTest,bMultitouchTest,bTouchscreenTest,bGpsTest,bLcdTest,bAudioOutputTest;
+    private Button bPhoneInformation, bWifiTest, bCamTest, bBtoothTest,bButtonTest,bBrightnessTest,bProxTest,bPedoTest,bMicTest,bGyroTest,bMultitouchTest,bTouchscreenTest,bGpsTest,bLcdTest,bAudioOutputTest,bTouchscreenTest2;
 /*    private ImageButton bStart;*/
 
     @Override
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         bGpsTest = (Button)findViewById(R.id.bGpsTest);
         bLcdTest = (Button)findViewById(R.id.bLcdTest);
         bAudioOutputTest = (Button) findViewById(R.id.bAudioOutputTest);
+        bTouchscreenTest2 = (Button)findViewById(R.id.bTouchscreenTest2);
 /*        bStart.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, PhoneInformationActivity.class));
@@ -120,6 +121,11 @@ public class MainActivity extends AppCompatActivity {
         bTouchscreenTest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, TouchscreenActivity.class));
+            }
+        });
+        bTouchscreenTest2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Touchscreen2Activity.class));
             }
         });
         bGpsTest.setOnClickListener(new View.OnClickListener() {
